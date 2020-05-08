@@ -3,6 +3,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
 from plotly import graph_objects as go
+import os
 
 df1 = pd.read_csv("GamePS4.csv")
 df2 = pd.read_csv("GameXOne.csv")
@@ -36,5 +37,6 @@ app.layout = html.Div([
                                layout=go.Layout(title = 'Game sales Chart', barmode='stack'))
               )
     ])
-if __name__ == "__main__":
-    app.run_server()
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 8000))
+    app.run_server(host='0.0.0.0',debug=True,port=port)
