@@ -1,1 +1,1 @@
-web: python app.py
+web: python GameAll_Bar.py
